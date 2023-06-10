@@ -1,8 +1,7 @@
 package ru.netology.service;
 
-import org.testng.annotations.Test;
-
-import static org.testng.Assert.assertEquals;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class CashbackHackServiceTest {
 
@@ -13,7 +12,7 @@ public class CashbackHackServiceTest {
         int amount = 1001;
         int actual = cashbackHackService.remain(amount);
         int expected = 999;
-        assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -23,7 +22,7 @@ public class CashbackHackServiceTest {
         int amount = 999;
         int actual = cashbackHackService.remain(amount);
         int expected = 1;
-        assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 
     // тест падает, хотя логически написан правильно
@@ -34,6 +33,6 @@ public class CashbackHackServiceTest {
         int amount = 1000;
         int actual = cashbackHackService.remain(amount);
         int expected = 0;
-        assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 }
