@@ -1,7 +1,8 @@
 package ru.netology.service;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
+
+import static org.testng.Assert.assertEquals;
 
 public class CashbackHackServiceTest {
 
@@ -11,8 +12,8 @@ public class CashbackHackServiceTest {
         CashbackHackService cashbackHackService = new CashbackHackService();
         int amount = 1001;
         int actual = cashbackHackService.remain(amount);
-        int expected  = 999;
-        Assertions.assertEquals(expected, actual);
+        int expected = 999;
+        assertEquals(actual, expected);
     }
 
     @Test
@@ -21,8 +22,8 @@ public class CashbackHackServiceTest {
         CashbackHackService cashbackHackService = new CashbackHackService();
         int amount = 999;
         int actual = cashbackHackService.remain(amount);
-        int expected  = 1;
-        Assertions.assertEquals(expected, actual);
+        int expected = 1;
+        assertEquals(actual, expected);
     }
 
     // тест падает, хотя логически написан правильно
@@ -32,7 +33,7 @@ public class CashbackHackServiceTest {
         CashbackHackService cashbackHackService = new CashbackHackService();
         int amount = 1000;
         int actual = cashbackHackService.remain(amount);
-        int expected  = 0;
-        Assertions.assertEquals(expected, actual);
+        int expected = 0;
+        assertEquals(actual, expected);
     }
 }
